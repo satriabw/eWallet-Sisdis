@@ -3,7 +3,7 @@ import requests
 import time
 
 
-host = "127.0.0.1:5002"
+host = "127.0.0.1:5006"
 
 
 def menu():
@@ -68,7 +68,6 @@ def main():
                 print("Masukkan nama: ")
                 nama = str(input())
                 r = register(user_id, nama, tujuan)
-                print(r)
             elif saldo["saldo"] < -1:
                 print("Terjadi error pada sistem silahkan coba lagi")
                 menu()
@@ -84,7 +83,6 @@ def main():
                     continue
 
             trf = transfer(user_id, nilai, tujuan)
-            print(trf)
             if trf["transferReturn"] > -1:
                 substract_saldo(user_id, nilai)
             else:

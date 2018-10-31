@@ -153,7 +153,7 @@ def register():
     data = request.json
     status_register = BERHASIL
     try:
-        if user_id not in quorum:
+        if data["user_id"] not in quorum:
             raise ValueError("Tidak boleh mendaftar kalau bukan di quorum")
         newAccount = Account(user_id=data["user_id"], nama=data["nama"], amount=0, is_host=False)
         db.session.add(newAccount)
