@@ -77,6 +77,8 @@ def checkQuorum(threshold, ret_name):
                         break
                 except requests.ConnectionError:
                     continue
+                except Exception:
+                    continue
             print("\nt:", t," threshold:", threshold, "\n")
             return value
         return wrapperCheckQuorum

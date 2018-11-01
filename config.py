@@ -18,7 +18,7 @@ class Config(object):
 def init_quorum():
     quorum_list = os.getenv("QUORUM").split(",")
 
-    if os.getenv("DEBUG"):
+    if os.getenv("DEBUG") == "True":
         with open("./file/list.json", 'r') as f:
             val = json.load(f)
     else:
